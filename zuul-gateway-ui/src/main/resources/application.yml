@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: zuulserver
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    users:
+      path: /auth/**
+      url: http://localhost:8080/
+
