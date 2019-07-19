@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/sign-up**","/login")
+                .antMatchers("/sign-up**","/auth")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -63,11 +63,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
- /*
-    @Bean
-    public AbstractUserDetailsAuthenticationProvider abstractUserDetailsAuthenticationProvider(){
-        return new JwtAuthenticationProvider();
-    }*/
 
     private PasswordEncoder passwordEncoder() {
 

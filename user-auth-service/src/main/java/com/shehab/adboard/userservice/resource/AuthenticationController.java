@@ -5,9 +5,7 @@ import com.shehab.adboard.userservice.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +18,7 @@ public class AuthenticationController {
     private final UserDetailsService customUserDetailsService;
     private final JwtUtil jwtUtil;
 
-    @PostMapping("/login")
+    @PostMapping("/auth")
     public String login(@RequestBody UserLogin userLogin) throws Exception {
         authenticate(userLogin);
         return jwtUtil.generateJwtToken(
