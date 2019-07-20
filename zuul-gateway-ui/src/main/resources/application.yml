@@ -7,6 +7,7 @@ zuul:
   sensitiveHeaders: Cookie,Set-Cookie
   routes:
     users:
-      path: /auth/**
+      path: /oauth/**
       url: http://localhost:8080/
-
+jwt:
+  secret: MuhammedShehab
